@@ -11,10 +11,14 @@ import example.com.pattern.factory.datatypes.Tiger;
 public class AnimalFactory {
 
     private AnimalFactory() {
-
+        // Util class
     }
 
+    // stateless = nicht zustandbehaftet
+    // stateful = zustandbehaftet
+    // Util class -> stateless
     public static final Animal getAnimal(AnimalTyp animalTyp) {
+
         switch (animalTyp) {
             case Tiger:
                 return new Tiger();
@@ -24,4 +28,5 @@ public class AnimalFactory {
                 throw new IllegalArgumentException("It isn't animal...");
         }
     }
+
 }
