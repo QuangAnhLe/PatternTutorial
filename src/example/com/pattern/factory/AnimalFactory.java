@@ -1,18 +1,21 @@
 package example.com.pattern.factory;
 
+import example.com.pattern.factory.datatypes.Animal;
+import example.com.pattern.factory.datatypes.AnimalTyp;
+import example.com.pattern.factory.datatypes.Lion;
+import example.com.pattern.factory.datatypes.Tiger;
+
 /**
  * Created by quang on 02.05.2021.
  */
-enum AnimalTyp {
-    Lion, Tiger, Ponpon,
-        }
 public class AnimalFactory {
 
-    private AnimalFactory(){
+    private AnimalFactory() {
 
     }
-    public static final Animal getAnimal(AnimalTyp animalTyp){
-        switch (animalTyp){
+
+    public static final Animal getAnimal(AnimalTyp animalTyp) {
+        switch (animalTyp) {
             case Tiger:
                 return new Tiger();
             case Lion:
