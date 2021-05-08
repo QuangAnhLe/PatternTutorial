@@ -1,4 +1,4 @@
-package example.com.BuilderPatternTutorial;
+package example.com.pattern.builder;
 
 public class BuilderPattern {
     public static void main (String[] args){

@@ -1,4 +1,4 @@
-package example.com.BuilderPatternTutorial;
+package example.com.pattern.builder;
 
 public class VeganBurger extends Burger{
     @Override

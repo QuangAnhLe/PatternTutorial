@@ -1,4 +1,4 @@
-package example.com.FactoryPatternTutorial;
+package example.com.pattern.factory;
 
 
 /**
