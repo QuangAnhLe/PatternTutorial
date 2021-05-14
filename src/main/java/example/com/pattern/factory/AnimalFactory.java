@@ -13,7 +13,6 @@ public class AnimalFactory {
     private AnimalFactory() {
         // Util class
     }
-
     // stateless = nicht zustandbehaftet
     // stateful = zustandbehaftet
     // Util class -> stateless
