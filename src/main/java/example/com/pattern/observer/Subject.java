@@ -1,6 +1,5 @@
 package example.com.pattern.observer;
 
-import java.util.Observer;
 
 public interface Subject {
 

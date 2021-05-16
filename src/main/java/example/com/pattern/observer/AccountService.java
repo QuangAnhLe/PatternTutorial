@@ -4,8 +4,7 @@ import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
+
 
 enum LoginStatus {
     SUCCESS, FAILURE, INVALID, EXPIRED
@@ -38,14 +37,14 @@ class User {
         @Override
         public void detach(Observer observer) {
             if(observers.contains(observer))
-                observers.add(observer);
+                observers.remove(observer);
         }
+
 
         @Override
         public void notifyAllObserver() {
-            Observable observable = null;
             for (Observer observer : observers) {
-                observer.update(observable, user);
+                observer.update(user);
             }
         }
         public void changeStatus(LoginStatus status){
@@ -53,16 +52,20 @@ class User {
             System.out.println("Status is changed");
             this.notifyAllObserver();
         }
-        public void login(){
-            if(!this.isValidEmail()){
+        public String login() {
+            if (!this.isValidIP()) {
                 user.setStatus(LoginStatus.INVALID);
-            }else if(this.isValidEmail()){
+                //return user.getIp();
+
+            } else if (this.isValidEmail()) {
                 user.setStatus(LoginStatus.SUCCESS);
-            }else {
+                //return user.getEmail();
+            } else
                 user.setStatus(LoginStatus.FAILURE);
-            }
             System.out.println("Login is handled");
             this.notifyAllObserver();
+            return user.getEmail();
+
         }
         private boolean isValidIP(){
             return "127.0.0.1".equals(user.getIp());
