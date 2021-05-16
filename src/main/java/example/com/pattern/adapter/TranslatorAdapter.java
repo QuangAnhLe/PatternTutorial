@@ -8,12 +8,13 @@ public class TranslatorAdapter implements VietnameseTarget {
     }
 
     @Override
-    public void send(String words) {
+    public String send(String words) {
         System.out.println("Reading Words...");
         System.out.println(words);
         String vietnameseWords = this.transtlate(words);
         System.out.println("Sending Words ...");
         japaneseadapte.receive(vietnameseWords);
+        return vietnameseWords;
     }
 
     private String transtlate(String vietnameseWorlds) {
